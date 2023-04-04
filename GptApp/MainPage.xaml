@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GptApp.MainPage">
+
+    <StackLayout BackgroundColor="Beige">
+        <Label Text="Отправить запрос:" TextColor="Black" FontSize="Small" />
+        <Entry x:Name="UrlEntry" BackgroundColor="Black"
+               TextColor ="Cyan" Placeholder="Вопрос: " 
+               Focused="UrlEntry_Focused" Margin="0,10" />
+
+        <Button Text="Отправить" BorderWidth = "2" BackgroundColor = "Blue" 
+                TextColor ="White" BorderColor="Cyan" CornerRadius="10" HorizontalOptions="Center"
+                WidthRequest="130" HeightRequest="40" Clicked="OnSendRequestClicked" Margin="0,10" />
+
+        <Label Text="Ответ:"  FontSize="Small" TextColor="Black" Margin="0,5,0,5" />
+        <Editor x:Name="ResponseEditor" BackgroundColor="Black"
+                IsReadOnly="true" TextColor ="Cyan" HeightRequest="450" />
+
+        <Grid ColumnSpacing="35">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Text="Сохранить"  BorderWidth = "2" BackgroundColor = "Blue"  Grid.Column="0" Grid.Row="0"
+                TextColor ="White" BorderColor="Cyan" CornerRadius="10" HorizontalOptions="Center"
+                VerticalOptions="Center" WidthRequest="130" HeightRequest="40" Clicked="OnSaveToFile" 
+                Margin="0,10" />
+
+            <Button Text="Просмотр"  BorderWidth = "2" BackgroundColor = "Blue"  Grid.Column="1" Grid.Row="0"
+                TextColor ="White" BorderColor="Cyan" CornerRadius="10" HorizontalOptions="Center"
+                VerticalOptions="Center" WidthRequest="130" HeightRequest="40" Clicked="OnViewToFile" 
+                Margin="0,10" />
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
