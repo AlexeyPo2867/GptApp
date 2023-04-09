@@ -107,9 +107,8 @@ namespace GptApp
 
         private async void SendEmail(object sender, EventArgs e)
         {
-           // fileNameEntry.Text = "shaman1801@yandex.ru";
-            MailAddress from = new MailAddress("shaman1801@yandex.ru", "Алексей");
-            MailAddress to = new MailAddress("shaman1801@yandex.ru");
+            MailAddress from = new MailAddress("", "");
+            MailAddress to = new MailAddress("");
             MailMessage m = new MailMessage(from, to);
             m.Subject = "Письмо";
             //   m.Body = textEditor.Text; // "Письмо-тест 2 работы smtp-клиента";
@@ -118,7 +117,7 @@ namespace GptApp
         //    await DisplayAlert("Ошибка", System.IO.Path.GetFileName(fileemail), "Ok");
 
             SmtpClient smtp = new SmtpClient("smtp.yandex.ru", 587);
-            smtp.Credentials = new NetworkCredential("shaman1801@yandex.ru", "serafim2867");
+            smtp.Credentials = new NetworkCredential("", "");
             smtp.EnableSsl = true;
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.UseDefaultCredentials = false;
